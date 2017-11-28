@@ -137,7 +137,7 @@
 			<!-- Links back to index.html (Main Menu) -->
 			<div class="back">
 				<a href="index.html">
-					<img src="images/back.png">
+					<img src="images/back.png" alt="Back">
 				</a>
 			</div>
 		</header>
@@ -147,109 +147,109 @@
 			<div class="row1">
 				<!-- Dr. Mario Selection -->
 				<div id="Dr_Mario-Main" class="character">
-					<img src="images/dr_mario.png">
+					<img src="images/dr_mario.png" alt="Dr. Mario">
 				</div>
 				<!-- Mario Selection -->
 				<div id="Mario-Main" class="character">
-					<img src="images/mario.png">
+					<img src="images/mario.png" alt="Mario">
 				</div>
 				<!-- Luigi Selection --> 
 				<div id="Luigi-Main" class="character">
-					<img src="images/luigi.png">
+					<img src="images/luigi.png" alt="Luigi">
 				</div>
 				<!-- Bowser Selection -->
 				<div id="Bowser-Main" class="character">
-					<img src="images/bowser.png">
+					<img src="images/bowser.png" alt="Boswer">
 				</div>
 				<!-- Peach Selection -->
 				<div id="Peach-Main" class="character">
-					<img src="images/peach.png">
+					<img src="images/peach.png" alt="Peach">
 				</div>
 				<!-- Yoshi Selection -->
 				<div id="Yoshi-Main" class="character">
-					<img src="images/yoshi.png">
+					<img src="images/yoshi.png" alt="Yoshi">
 				</div>
 				<!-- Donkey Kong Selection -->
 				<div id="Donkey_Kong-Main" class="character">
-					<img src="images/donkey_kong.png" >
+					<img src="images/donkey_kong.png" alt="Donkey Kong">
 				</div>
 				<!-- Captain Falcon Selection -->
 				<div id="Captain_Falcon-Main" class="character">
-					<img src="images/captain_falcon.png">
+					<img src="images/captain_falcon.png" alt="Captain Falcon">
 				</div>
 				<!-- Ganondorf Selection -->
 				<div id="Ganondorf-Main" class="character">
-					<img src="images/ganondorf.png">
+					<img src="images/ganondorf.png" alt="Ganondorf">
 				</div>
 			</div>
 			<!-- Second Row of Characters -->
 			<div class="row2">
 				<!-- Falco Selection -->
 				<div id="Falco-Main" class="character">
-					<img src="images/falco.png">
+					<img src="images/falco.png" alt="Falco">
 				</div>
 				<!-- Fox Selection -->
 				<div id="Fox-Main" class="character">
-					<img src="images/fox.png">
+					<img src="images/fox.png" alt="Fox">
 				</div>
 				<!-- Ness Selection -->
 				<div id="Ness-Main" class="character">
-					<img src="images/ness.png">
+					<img src="images/ness.png" alt="Ness">
 				</div>
 				<!-- Ice Climbers Selection -->
 				<div id="Ice_Climbers-Main" class="character">
-					<img src="images/ice_climbers.png">
+					<img src="images/ice_climbers.png" alt="Ice Climbers">
 				</div>
 				<!-- Kirby Selection -->
 				<div id="Kirby-Main" class="character">
-					<img src="images/kirby.png">
+					<img src="images/kirby.png" alt="Kirby">
 				</div>
 				<!-- Samus Selection -->
 				<div id="Samus-Main" class="character">
-					<img src="images/samus.png">
+					<img src="images/samus.png" alt="Samus">
 				</div>
 				<!-- Zelda Selection -->
 				<div id="Zelda-Main" class="character">
-					<img src="images/zelda.png">
+					<img src="images/zelda.png" alt="Zelda">
 				</div>
 				<!-- Link Selection -->
 				<div id="Link-Main" class="character">
-					<img src="images/link.png">
+					<img src="images/link.png" alt="Link">
 				</div>
 				<!-- Young Link Selection -->
 				<div id="Young_Link-Main" class="character">
-					<img src="images/young_link.png">
+					<img src="images/young_link.png" alt="Young Link">
 				</div>
 			</div>
 			<!-- Third Row of Characters -->
 			<div class="row3">
 				<!-- Pichu Selection -->
 				<div id="Pichu-Main" class="character">
-					<img src="images/pichu.png">
+					<img src="images/pichu.png" alt="Pichu">
 				</div>
 				<!-- Pikachu Selection -->
 				<div id="Pikachu-Main" class="character">
-					<img src="images/pikachu.png">
+					<img src="images/pikachu.png" alt="Pikachu">
 				</div>
 				<!-- Jigglypuff Selection -->
 				<div id="Jigglypuff-Main" class="character">
-					<img src="images/jigglypuff.png">
+					<img src="images/jigglypuff.png" alt="Jigglypuff">
 				</div>
 				<!-- Mewtwo Selection -->
 				<div id="Mewtwo-Main" class="character">
-					<img src="images/mewtwo.png">
+					<img src="images/mewtwo.png" alt="Mewtwo">
 				</div>
 				<!-- Mr. Game & Watch Selection -->
 				<div id="Mr_Game_&_Watch-Main" class="character">
-					<img src="images/mr_game_&_watch.png">
+					<img src="images/mr_game_&_watch.png" alt="Mr. Game & Watch">
 				</div>
 				<!-- Marth Selection -->
 				<div id="Marth-Main" class="character">
-					<img src="images/marth.png">
+					<img src="images/marth.png" alt="Marth">
 				</div>
 				<!-- Roy Selection -->
 				<div id="Roy-Main" class="character">
-					<img src="images/roy.png">
+					<img src="images/roy.png" alt="Roy">
 				</div>
 			</div>
 			<!-- Selected Character Previews and Start Button -->
@@ -268,6 +268,8 @@
 		<script src="jquery-3.2.1.min.js"></script>
 
 		<script type="text/javascript">
+			var selectedCharacter;
+
 			// adds an onclick event to the logo
 			$(document).on("click",".start", function () {
    				changePage();
@@ -292,12 +294,13 @@
 			// places a character preview onto the empty background
 			// using the imageId as part of the name of the file
 			// toggles the logo if preview space is empty before clicked 
-			// does nothing if both character previews are full
+			// switches to new character if not empty
 			function placeCharacter(imageId) {
 				if ($('#player1').attr('src') == "previews/player-bg.jpg") {
 					$('#logo-image').toggle('show');
 				}
-				$('#player1').attr('src', 'previews/' + imageId + '.jpg');		
+				$('#player1').attr('src', 'previews/' + imageId + '.jpg');
+				selectedCharacter = imageId;	
 			}
 
 			// removes character preview and leaves an empty background
