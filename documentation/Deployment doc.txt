@@ -1,0 +1,8 @@
+Download Python 2.7.14 from:
+https://www.python.org/downloads/
+
+We have our database hosted online with Google Cloud, it is a MySQL database, so you can substitute an alternative MySQL solution if you tweak the logic to point at the correct location.
+
+Follow this link - MySQL Python library for querying MySQL database - and download the appropriate version for your _Python_ install (not OS):
+http://www.codegood.com/archives/129
+

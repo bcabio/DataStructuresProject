@@ -1,0 +1,9 @@
+System Requirements
+ - Platform
+    - Smashr is a browser based solution, using JavaScript to communicate with the backend server. For consumer use, all that is needed is an updated web browser and internet connection.
+    - For full database implementation, this project was built for Windows machines, running Python 2.7 and specific packages, while using a MySQL database. See Deployment doc for more info.
+
+ - Using Smashr
+    - Navigate to [INDEX URL], and click Start on the screen.
+    - Select a character to be given detailed stats about that character, including win/loss percentage, pick rates, etc.
+    - Alternatively, select a Player to view stats about the specific player, including character pick rates, win rates, etc.
