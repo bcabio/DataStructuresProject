@@ -1,0 +1,26 @@
+Display data pulled from a database, MySQL. 
+
+Overview
+'Smashr' acts as a competitive focused data viewing tool for the video game Super Smash Bros. Melee. Players can enter gathered data and quickly organize and analyze information based on desired criteria of win rate, play rates, etc. 
+
+Goals
+ - Offer an easy to use interface for stat tracking among our friend group and other competitive groups that would like mass data analysis.
+ - Make data collection an automated task for players. (to be implemented)
+
+Audience
+ - Players
+    - See "Goals" above
+ - Spectators
+    - Makes viewing stats much easier to digest
+
+Features
+ - Data retrieval
+    - Player Info
+        - W/L statistics
+        - Map preference
+        - Counters/matchups
+    - Character Info
+        - Advantages/Disadvantages (via stage or character matchup)
+        - Playrates
+
+Braxton McLean, Raymond Glier
