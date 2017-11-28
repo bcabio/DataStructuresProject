@@ -34,20 +34,12 @@
 				width: 10%;
 			}
 
-			/*header:after, #container:after {
-	  			content: "";
-	  			display: table;
-	  			clear: both;
-			}*/
-
 			#wrapper {
 				max-width: 100%; 
-				/*max-height: 80%;*/
 				cursor: url("images/open_cursor.png"), pointer;
 			}
 
 			.row1 {
-				cursor: url("images/point_cursor.png"), pointer;
 				position: absolute;
 				top: 15%;
 				left: 10%;
@@ -56,7 +48,6 @@
 			}
 
 			.row2 {
-				cursor: url("images/point_cursor.png"), pointer;
 				position: absolute;
 				left: 10%;
 				top: 27.5%;
@@ -65,7 +56,6 @@
 			}
 
 			.row3 {
-				cursor: url("images/point_cursor.png"), pointer;
 				position:absolute;
 				left: 18.8%;
 				top: 40%;
@@ -84,7 +74,6 @@
 			}
 
 			.character img {
-				/*position: absolute;*/
 				cursor: url("images/point_cursor.png"), pointer;
 				max-height: 100%;
 				max-width: 100%;
@@ -92,23 +81,39 @@
 
 			.selected {
 				position: relative;
-				margin-top: 25px;
-				margin-left: 17.5%;
+				margin-top: 22%;
+				margin-left: 5%;
 				height: 40vh;
-				width: 40vw;
+				width: 100vw;
 			}
 
 			.preview {
 				height: 100%;
-				width: 44%;
-				margin-right: 5%;
+				width: 18.8%;
 				float: left;
+			}
+
+			#left-preview {
+				padding-right: 15%;
+			}
+
+			#logo {
+				height: 50%;
+				padding-right: 15%;
+			}
+
+			#logo-image {
+				display: none;
 			}
 
 			.preview img {
 				cursor: url("images/point_cursor.png"), pointer;
 				width: 100%;
 				height: 100%;
+			}
+
+			.show {
+				display: block;
 			}
 		</style>
 	</head>
@@ -118,11 +123,12 @@
 				<img src="images/Header.jpg">
 			</div-->
 			<div class="back">
-				<a href="">
+				<a href="index.html">
 					<img src="images/back.png">
 				</a>
 			</div>
 		</header>
+
 		<div id="wrapper">
 			<div class="row1">
 				<div id="Dr_Mario-Main" class="character">
@@ -204,18 +210,24 @@
 				<div id="Roy-Main" class="character">
 					<img src="images/roy.png">
 				</div>
-			</div-->
+			</div>
 			<div class="selected">
 				<div id="left-preview" class="preview">
 					<img src="previews/player-bg.jpg" id="player1">
+				</div>
+				<div id="logo" class="preview">
+					<a href="http://google.com">
+						<img src="images/logo.png" id="logo-image">
+					</a>
 				</div>
 				<div id="right-preview" class="preview">
 					<img src="previews/player-bg.jpg" id="player2">
 				</div>
 			</div>
-
 		</div>
+
 		<script src="jquery-3.2.1.min.js"></script>
+
 		<script type="text/javascript">
 			$(document).on("click",".character", function () {
    				var clickedBtnID = $(this).attr('id'); // or var clickedBtnID = this.id
@@ -234,9 +246,19 @@
 				} else if ($('#player2').attr('src') == "previews/player-bg.jpg") {
 					$('#player2').attr('src', 'previews/' + imageId + '.jpg');
 				}
+				if ($('#player1').attr('src') != "previews/player-bg.jpg") {
+					if ($('#player2').attr('src') != "previews/player-bg.jpg") {
+						$('#logo-image').toggle('show');
+					}
+				}
 			}
 
 			function removeCharacter(player) {
+				if ($('#player1').attr('src') != "previews/player-bg.jpg") {
+					if ($('#player2').attr('src') != "previews/player-bg.jpg") {
+						$('#logo-image').toggle('show');
+					}
+				}
 				if (player == "left-preview") {
 					$('#player1').attr('src', 'previews/player-bg.jpg');
 				} else if (player == "right-preview") {
