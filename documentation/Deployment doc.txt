@@ -1,8 +1,14 @@
-Download Python 2.7.14 from:
-https://www.python.org/downloads/
+Clone the repo from:
+https://github.com/bcabio/DataStructuresProject
 
-We have our database hosted online with Google Cloud, it is a MySQL database, so you can substitute an alternative MySQL solution if you tweak the logic to point at the correct location.
+Download node from:
+https://nodejs.org/en/download/
 
-Follow this link - MySQL Python library for querying MySQL database - and download the appropriate version for your _Python_ install (not OS):
-http://www.codegood.com/archives/129
+in the cloned repo, run `npm install` and `npm install -g typescript`,
+then run `tsc` to compile typescript
 
+Make a Google Cloud instance and import csv file of data into the SQL server. This step may be replaced with any other MySQL instance, but redirects would be required.
+
+cd into `server` folder, and run node.js
+
+make a request to `localhost:5000` in a browswer

@@ -5,7 +5,7 @@ Overview
 
 Goals
  - Offer an easy to use interface for stat tracking among our friend group and other competitive groups that would like mass data analysis.
- - Make data collection an automated task for players.
+ - Make data collection an automated task for players. (to be implemented)
 
 Audience
  - Players
@@ -14,11 +14,6 @@ Audience
     - Makes viewing stats much easier to digest
 
 Features
- - Data entry
-    - Player1 Info
-    - Player2 Info 
-    - Stage Info
-    - Stock Leads
  - Data retrieval
     - Player Info
         - W/L statistics
