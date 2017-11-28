@@ -1,0 +1,143 @@
+$yellow:    #f3dfa2;
+$orange:    #e88d67;
+$black:     #2b303a;
+$grey:      #e2e2e2;
+$blue:      #7ebdc2;
+
+$box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+$navbar-height: 100px;
+$cart-width: 300px;
+
+body {
+    margin: 0;
+    padding: 0;
+
+    background-color: white;
+}
+
+navbar {
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: $navbar-height;
+    z-index: 10;
+    background-image: url("../res/seigaiha.png");
+    background-repeat: repeat;
+    
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    li {
+        display: inline;
+        float: left;
+    }
+    #logo {
+        width: $navbar-height;
+        height: $navbar-height;
+    }
+    #viewCart {
+        float: right;
+        padding-top: 30px;
+        padding-right: 20px;
+    }
+}
+
+#content {
+    padding-top: $navbar-height;
+}
+
+#item-container {
+    width: 800px;
+    margin: 0 auto;
+    margin-top: 20px;
+    text-align: center;
+
+    .item {
+        background-color: white;
+        color: $black;
+        text-align: center;
+        vertical-align: top;
+        padding: 10px;
+        display: inline-block;
+        width: 350px;
+        min-height: 330px;
+        margin: 0 auto;
+        margin-left: 20px;
+        margin-bottom: 40px;
+        box-shadow: $box-shadow;
+        
+        .item-image {
+            max-width: 200px;
+            max-height: 200px;
+        }   
+        .item-text {
+            text-align:left;
+            white-space: pre-line;
+            display: none;
+        }
+    }
+}
+.item:hover > .item-text {
+    display: inline-block;
+}
+
+#cart {
+    height: 100%;
+    width: $cart-width;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: $navbar-height;
+    box-sizing: border-box;
+
+    background-color: $blue;
+    box-shadow: $box-shadow;
+    
+    text-align: center;
+    z-index: 1;
+    overflow-y: auto;
+    
+    .cart-image {
+        max-width: 40px;
+        max-height: 60px;
+    }
+    .cart-item {
+        background-color: white;
+        color: $black;
+        min-width: $cart-width * .75;
+        height: 110px;
+        display: inline-block;
+        border-radius: 20px;
+        margin: 10px auto;
+        padding: 5px;
+
+        h4 {
+            margin: 0;
+        }
+    }
+}
+
+
+#toast {
+    border-radius: 10px;
+    background-color: $yellow;
+    padding: 20px;
+}
+
+.hide {display: none;}
+.show {display: block;}
+
+@keyframes fade {
+    0%   {opacity: 0;}
+    50%  {opacity: 100;}
+    100% {opacity: 0;}
+}
+.fade-in-out {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    animation-name: fade;
+    animation-duration: 2s;
+}

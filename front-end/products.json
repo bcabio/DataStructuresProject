@@ -1,0 +1,32 @@
+{
+    "EVGA_GTX_1080": {
+        "name": "EVGA GTX 1080",
+        "image_url": "GTX1080.jpeg",
+        "description": " Real Base Clock: 1721 MHz / Real Boost Clock: 1860 MHz; Memory Detail: 8192MB GDDR5X\nCompletely adjustable RGB LED using EVGA Precision XOC\nWhat you see is what you get! – No additional software required to achieve listed clock speeds\nDouble BIOS, Refer user manual below\nDX12 OSD Support with EVGA Precision XOC",
+        "ID": "EVGA_GTX_1080"
+    },
+    "bulova_silvertone": {
+        "name": "Bulova Silvertone",
+        "image_url": "bulovaSilvertone.jpeg",
+        "description": "Stainless Steel\nMade in USA or Imported\nUltra-precise round watch with blue sunray dial, three chronograph sub dials, luminous hands and markers, screw-back, and tachymeter\n43 mm stainless steel case with mineral dial window\nQuartz movement with analog display\nStainless steel band with double-press deployant closure\nWater resistant to 100 m (330 ft): In general, suitable for swimming and snorkeling, but not scuba diving",
+        "ID": "bulova_silvertone"
+    },
+    "Gatsby": {
+        "ID" : "Gatsby",
+        "name" : "The Great Gatsby",
+        "image_url" : "gatsby.jpg",
+        "description" : "The exemplary novel of the Jazz Age, F. Scott Fitzgeralds' third book, The Great Gatsby (1925), stands as the supreme achievement of his career. T. S. Eliot read it three times and saw it as the \"first step\" American fiction had taken since Henry James; H. L. Mencken praised \"the charm and beauty of the writing,\" as well as Fitzgerald's sharp social sense; and Thomas Wolfe hailed it as Fitzgerald's \"best work\" thus far. The story of the fabulously wealthy Jay Gatsby and his love for the beautiful Daisy"
+    },
+    "Frisbee": {
+        "ID" : "Frisbee",
+        "name" : " Innova Big Kahuna Heavyweight Wind-Resistant Flying Disc - Assorted Colors",
+        "image_url" : "frisbee.jpg",
+        "description" : " Perfect for windy days!\nTwo designs available, choose your favorite\nWeight: 200 grams\nDiameter: 27.5 cm\nSold individually in assorted colors. May vary from photo"
+    },
+    "Cannon": {
+        "ID" : "Cannon",
+        "name" : " Canon SX530 HS 9779B001 PowerShot",
+        "image_url" : "cannon.jpg",
+        "description" : " Powerful 50x Optical Zoom (24–1200mm)\n16.0 Megapixel High-Sensitivity CMOS sensor combined with the Canon DIGIC 4+ Image Processor\nBuilt-in Wi-Fi allows wireless transferring of images and video to compatible mobile devices\nCapture stunning 1080p Full HD video with a dedicated movie button\nLarge 3.0-inch LCD with a screen resolution of 461,000 dots allows easy viewing even from a wide angle "
+    }
+}

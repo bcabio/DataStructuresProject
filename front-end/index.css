@@ -1,0 +1,53 @@
+
+/*
+	This is the CSS for the index.html page which is the first page you will see when the site loads
+	Logic: 
+		I wanted to create a page emulating the Smash Bros. Melee start screen so I created a page with centered text
+		and fonts that mirror those used in the game. The page will fade to like video games do when they go from one screen
+		to another.
+
+
+
+*/
+body, html {
+	min-height: 100%;
+}
+
+body {
+	background-image: url(smashbkg.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.welcome-header h1 {
+	width:100%;
+	max-width: 960px;
+	font:6em "Super Smash 4.1", regular;
+	color: white;
+	margin: 40px auto;
+	text-align: center;
+	padding-top: 11%;
+	text-shadow: 2px 0 0 #000000, -2px 0 0 #000000, 0 2px 0 #000000, 0 -2px 0 #000000, 1px 1px #000000, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000;
+
+}
+
+.red {
+        color:#4C0001;   
+    }
+
+.blue {
+	color:#0000CD;
+}
+
+.start-text p {
+	color:yellow;
+	text-align: center;
+	font:1em "Super Smash 4.1", regular;
+	
+}
+
+.start-text a {
+	text-decoration:none;
+	color:yellow;
+	text-shadow: 2px 0 0 #000000, -2px 0 0 #000000, 0 2px 0 #000000, 0 -2px 0 #000000, 1px 1px #000000, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000;
+}
