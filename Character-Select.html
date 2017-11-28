@@ -34,11 +34,11 @@
 				width: 10%;
 			}
 
-			header:after, #container:after {
+			/*header:after, #container:after {
 	  			content: "";
 	  			display: table;
 	  			clear: both;
-			}
+			}*/
 
 			#wrapper {
 				max-width: 100%; 
@@ -47,6 +47,7 @@
 			}
 
 			.row1 {
+				cursor: url("images/point_cursor.png"), pointer;
 				position: absolute;
 				top: 15%;
 				left: 10%;
@@ -55,6 +56,7 @@
 			}
 
 			.row2 {
+				cursor: url("images/point_cursor.png"), pointer;
 				position: absolute;
 				left: 10%;
 				top: 27.5%;
@@ -63,6 +65,7 @@
 			}
 
 			.row3 {
+				cursor: url("images/point_cursor.png"), pointer;
 				position:absolute;
 				left: 18.8%;
 				top: 40%;
@@ -71,6 +74,7 @@
 			}
 
 			.character {
+				cursor: url("images/point_cursor.png");
 				float: left;
 				width: 10%;
 				padding-top: 30px;
@@ -96,7 +100,7 @@
 
 			.preview {
 				height: 100%;
-				width: 40%;
+				width: 44%;
 				margin-right: 5%;
 				float: left;
 			}
@@ -121,7 +125,7 @@
 		</header>
 		<div id="wrapper">
 			<div class="row1">
-				<div id="Dr_Mario-Main" class="character" onclick="placeChar()">
+				<div id="Dr_Mario-Main" class="character">
 					<img src="images/dr_mario.png">
 				</div>
 				<div id="Mario-Main" class="character">
@@ -142,7 +146,7 @@
 				<div id="Donkey_Kong-Main" class="character">
 					<img src="images/donkey_kong.png" >
 				</div>
-				<div id="Captian_Falcon-Main" class="character">
+				<div id="Captain_Falcon-Main" class="character">
 					<img src="images/captain_falcon.png">
 				</div>
 				<div id="Ganondorf-Main" class="character">
@@ -150,7 +154,7 @@
 				</div>
 			</div>
 			<div class="row2">
-				<div id="Falco-Main" class="character" onclick="location.href='http://youtube.com'">
+				<div id="Falco-Main" class="character">
 					<img src="images/falco.png">
 				</div>
 				<div id="Fox-Main" class="character">
@@ -202,11 +206,11 @@
 				</div>
 			</div-->
 			<div class="selected">
-				<div class="preview">
-					<img src="images/blank_preview.jpg">
+				<div id="left-preview" class="preview">
+					<img src="previews/player-bg.jpg" id="player1">
 				</div>
-				<div class="preview">
-					<img src="images/blank_preview.jpg">
+				<div id="right-preview" class="preview">
+					<img src="previews/player-bg.jpg" id="player2">
 				</div>
 			</div>
 
@@ -215,11 +219,29 @@
 		<script type="text/javascript">
 			$(document).on("click",".character", function () {
    				var clickedBtnID = $(this).attr('id'); // or var clickedBtnID = this.id
-   				alert('you clicked on button #' + clickedBtnID);
+   				placeCharacter(clickedBtnID);
 			});
 
+			$(document).on("click",".preview", function () {
+   				var clickedBtnID = $(this).attr('id'); // or var clickedBtnID = this.id
+   				removeCharacter(clickedBtnID);
+			});
+
+
 			function placeCharacter(imageId) {
-				
+				if ($('#player1').attr('src') == "previews/player-bg.jpg") {
+					$('#player1').attr('src', 'previews/' + imageId + '.jpg');
+				} else if ($('#player2').attr('src') == "previews/player-bg.jpg") {
+					$('#player2').attr('src', 'previews/' + imageId + '.jpg');
+				}
+			}
+
+			function removeCharacter(player) {
+				if (player == "left-preview") {
+					$('#player1').attr('src', 'previews/player-bg.jpg');
+				} else if (player == "right-preview") {
+					$('#player2').attr('src', 'previews/player-bg.jpg');
+				}
 			}
 
 		</script>
