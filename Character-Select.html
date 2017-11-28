@@ -82,14 +82,14 @@
 			.selected {
 				position: relative;
 				margin-top: 22%;
-				margin-left: 9%;
+				margin-left: 20%;
 				height: 40vh;
-				width: 90vw;
+				width: 70vw;
 			}
 
 			.preview {
 				height: 100%;
-				width: 20%;
+				width: 27%;
 				float: left;
 			}
 
@@ -110,9 +110,9 @@
 			}
 
 			#logo {
-				height: 50%;
-				padding-top: 5%;
-				padding-right: 15%;
+				height: 60%;
+				width: 30%;
+				padding-top: 4%;
 			}
 
 			/* Logo image starts hidden */
@@ -262,10 +262,6 @@
 				<div id="logo" class="start">
 					<img src="images/logo.png" id="logo-image">
 				</div>
-				<!-- Right Character Preview -->
-				<div id="right-preview" class="preview">
-					<img src="previews/player-bg.jpg" id="player2">
-				</div>
 			</div>
 		</div>
 
@@ -285,7 +281,7 @@
    				placeCharacter(clickedBtnID);
 			});
 
-			// adds an onclick event to the character previews
+			// adds an onclick event to the character preview
 			// uses the id of the preview clicked as an argument
 			// for removeCharacter() function
 			$(document).on("click",".preview", function () {
@@ -295,40 +291,26 @@
 
 			// places a character preview onto the empty background
 			// using the imageId as part of the name of the file
-			// toggles the logo if both preview spaces are filled
+			// toggles the logo if preview space is empty before clicked 
 			// does nothing if both character previews are full
 			function placeCharacter(imageId) {
-				if ($('#player1').attr('src') == "previews/player-bg.jpg" ||
-					$('#player2').attr('src') == "previews/player-bg.jpg") {
-					if ($('#player1').attr('src') == "previews/player-bg.jpg") {
-						$('#player1').attr('src', 'previews/' + imageId + '.jpg');
-					} else if ($('#player2').attr('src') == "previews/player-bg.jpg") {
-						$('#player2').attr('src', 'previews/' + imageId + '.jpg');
-					}
-					if ($('#player1').attr('src') != "previews/player-bg.jpg") {
-						if ($('#player2').attr('src') != "previews/player-bg.jpg") {
-							$('#logo-image').toggle('show');
-						}
-					}
+				if ($('#player1').attr('src') == "previews/player-bg.jpg") {
+					$('#logo-image').toggle('show');
 				}
+				if ($('#player1').attr('src') == "previews/player-bg.jpg") {
+					$('#player1').attr('src', 'previews/' + imageId + '.jpg');
+				}		
 			}
 
 			// removes character preview and leaves an empty background
-			// from the preview clicked
-			// toggles the logo if both preview spaces were filled before
+			// toggles the logo if preview space was filled before
 			// the preview was clicked
 			// does nothing if preview clicked is already empty
 			function removeCharacter(player) {
 				if ($('#player1').attr('src') != "previews/player-bg.jpg") {
-					if ($('#player2').attr('src') != "previews/player-bg.jpg") {
 						$('#logo-image').toggle('show');
-					}
 				}
-				if (player == "left-preview") {
-					$('#player1').attr('src', 'previews/player-bg.jpg');
-				} else if (player == "right-preview") {
-					$('#player2').attr('src', 'previews/player-bg.jpg');
-				}
+				$('#player1').attr('src', 'previews/player-bg.jpg');
 			}
 
 			function changePage() {
