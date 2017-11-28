@@ -82,14 +82,14 @@
 			.selected {
 				position: relative;
 				margin-top: 22%;
-				margin-left: 20%;
+				margin-left: 9%;
 				height: 40vh;
-				width: 70vw;
+				width: 90vw;
 			}
 
 			.preview {
 				height: 100%;
-				width: 27%;
+				width: 20%;
 				float: left;
 			}
 
@@ -110,9 +110,9 @@
 			}
 
 			#logo {
-				height: 60%;
-				width: 30%;
-				padding-top: 4%;
+				height: 50%;
+				padding-top: 5%;
+				padding-right: 15%;
 			}
 
 			/* Logo image starts hidden */
@@ -124,7 +124,6 @@
 				cursor: url("images/point_cursor.png"), pointer;
 				width: 100%;
 				height: 100%;
-				padding-top: 30px;
 			}
 
 			/* Toggle logo images Display*/
@@ -263,16 +262,20 @@
 				<div id="logo" class="start">
 					<img src="images/logo.png" id="logo-image">
 				</div>
+				<!-- Right Character Preview -->
+				<div id="right-preview" class="preview">
+					<img src="previews/player-bg.jpg" id="player2">
+				</div>
 			</div>
 		</div>
 
 		<script src="jquery-3.2.1.min.js"></script>
 
 		<script type="text/javascript">
-			
-			// This fades in the page.
-			$('body').css('display', 'none');
-			$('body').fadeIn(1000);
+			// adds an onclick event to the logo
+			$(document).on("click",".start", function () {
+   				changePage();
+			});
 
 			// adds an onclick event to the character images
 			// uses the id of the character div clicked as an
@@ -282,7 +285,7 @@
    				placeCharacter(clickedBtnID);
 			});
 
-			// adds an onclick event to the character preview
+			// adds an onclick event to the character previews
 			// uses the id of the preview clicked as an argument
 			// for removeCharacter() function
 			$(document).on("click",".preview", function () {
@@ -292,24 +295,44 @@
 
 			// places a character preview onto the empty background
 			// using the imageId as part of the name of the file
-			// toggles the logo if preview space is empty before clicked 
+			// toggles the logo if both preview spaces are filled
 			// does nothing if both character previews are full
 			function placeCharacter(imageId) {
-				if ($('#player1').attr('src') == "previews/player-bg.jpg") {
-					$('#logo-image').toggle('show');
+				if ($('#player1').attr('src') == "previews/player-bg.jpg" ||
+					$('#player2').attr('src') == "previews/player-bg.jpg") {
+					if ($('#player1').attr('src') == "previews/player-bg.jpg") {
+						$('#player1').attr('src', 'previews/' + imageId + '.jpg');
+					} else if ($('#player2').attr('src') == "previews/player-bg.jpg") {
+						$('#player2').attr('src', 'previews/' + imageId + '.jpg');
+					}
+					if ($('#player1').attr('src') != "previews/player-bg.jpg") {
+						if ($('#player2').attr('src') != "previews/player-bg.jpg") {
+							$('#logo-image').toggle('show');
+						}
+					}
 				}
-				$('#player1').attr('src', 'previews/' + imageId + '.jpg');		
 			}
 
 			// removes character preview and leaves an empty background
-			// toggles the logo if preview space was filled before
+			// from the preview clicked
+			// toggles the logo if both preview spaces were filled before
 			// the preview was clicked
 			// does nothing if preview clicked is already empty
 			function removeCharacter(player) {
 				if ($('#player1').attr('src') != "previews/player-bg.jpg") {
+					if ($('#player2').attr('src') != "previews/player-bg.jpg") {
 						$('#logo-image').toggle('show');
+					}
 				}
-				$('#player1').attr('src', 'previews/player-bg.jpg');
+				if (player == "left-preview") {
+					$('#player1').attr('src', 'previews/player-bg.jpg');
+				} else if (player == "right-preview") {
+					$('#player2').attr('src', 'previews/player-bg.jpg');
+				}
+			}
+
+			function changePage() {
+
 			}
 
 		</script>
