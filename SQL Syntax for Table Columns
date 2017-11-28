@@ -1,0 +1,12 @@
+CREATE TABLE SmashData (
+    Player1 varchar(255),
+    P1Character varchar(255),
+    P1KOs int,
+    P1Falls varchar(255),
+    Player2 varchar(255),
+    P2Character varchar(255),
+    P2KOs int,
+    P2Falls int,
+    Stage varchar(255),
+    Winner varchar(255)
+)
