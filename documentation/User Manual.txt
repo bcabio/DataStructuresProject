@@ -7,3 +7,5 @@ System Requirements
     - Navigate to localhost:5000 or an alternative hosted url, and click Start on the screen.
     - Select a character to be given detailed stats about that character, including win/loss percentage, pick rates, etc.
     - Alternatively, select a Player to view stats about the specific player, including character pick rates, win rates, etc.
+
+Braxton McLean, Raymond Glier

@@ -18,3 +18,5 @@ Routes for middleware (serving and accessing content)
 
 Frontend:
 Angular 2 - makes request to middleware via routes listed above. 
+
+Braxton McLean, Raymond Glier

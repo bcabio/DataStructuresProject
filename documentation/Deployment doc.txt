@@ -11,4 +11,6 @@ Make a Google Cloud instance and import csv file of data into the SQL server. Th
 
 cd into `server` folder, and run node.js
 
-make a request to `localhost:5000` in a browswer
+make a request to `localhost:5000` in a browswer\
+
+Braxton McLean, Raymond Glier
