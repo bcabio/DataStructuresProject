@@ -241,14 +241,17 @@
 
 
 			function placeCharacter(imageId) {
-				if ($('#player1').attr('src') == "previews/player-bg.jpg") {
-					$('#player1').attr('src', 'previews/' + imageId + '.jpg');
-				} else if ($('#player2').attr('src') == "previews/player-bg.jpg") {
-					$('#player2').attr('src', 'previews/' + imageId + '.jpg');
-				}
-				if ($('#player1').attr('src') != "previews/player-bg.jpg") {
-					if ($('#player2').attr('src') != "previews/player-bg.jpg") {
-						$('#logo-image').toggle('show');
+				if ($('#player1').attr('src') == "previews/player-bg.jpg" ||
+					$('#player2').attr('src') == "previews/player-bg.jpg") {
+					if ($('#player1').attr('src') == "previews/player-bg.jpg") {
+						$('#player1').attr('src', 'previews/' + imageId + '.jpg');
+					} else if ($('#player2').attr('src') == "previews/player-bg.jpg") {
+						$('#player2').attr('src', 'previews/' + imageId + '.jpg');
+					}
+					if ($('#player1').attr('src') != "previews/player-bg.jpg") {
+						if ($('#player2').attr('src') != "previews/player-bg.jpg") {
+							$('#logo-image').toggle('show');
+						}
 					}
 				}
 			}
