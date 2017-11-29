@@ -1,1 +1,0 @@
-Non existent. See Design Spec - Entity Relationship document for database and interaction schema.
