@@ -1,0 +1,52 @@
+<div class="container">
+    <h1>Match Form</h1>
+    <form [formGroup]="matchForm" novalidate (ngSubmit)="submitMatch(matchForm.value)">
+      <div>
+        <label for="">Winner</label>
+        <input type="text" id="name" formControlName="Winner">
+      </div>
+ 
+      <div>
+        <label for="">Winner Character</label>
+        <input type="text" id="winner-character" formControlName="Winner_Character">
+      </div>
+
+      <div>
+        <label for="">Winner KOs</label>
+        <input type="text" id="winner-kos" formControlName="Winner_KOS">
+      </div>
+
+      <div>
+        <label for="">Winner Falls</label>
+        <input type="text" id="winner-falls" formControlName="Winner_Falls">
+      </div>
+
+      <div>
+        <label for="">Loser </label>
+        <input type="text" id="loser" formControlName="Loser">
+      </div>
+
+      <div>
+        <label for="">Loser Character</label>
+        <input type="text" id="loser-character" formControlName="Loser_Character">
+      </div>
+
+      <div>
+        <label for="">Loser KOS</label>
+        <input type="text" id="name" formControlName="Loser_KOS">
+      </div>
+
+      <div>
+        <label for="">Loser Falls</label>
+        <input type="text" id="name" formControlName="Loser_Falls">
+      </div>
+
+      <div>
+        <label for="">Stage</label>
+        <input type="text" id="name" formControlName="Stage">
+      </div>
+ 
+      <button type="submit" class="btn btn-success">Submit</button>
+      <div [hidden]="!submitted"> Submitted! </div>
+    </form>
+</div>

@@ -22,6 +22,18 @@ var MatchListService = (function () {
         return this.http.get(this.url)
             .map(function (response) { return response.json(); });
     };
+    MatchListService.prototype.getMatchesByWinner = function (winner) {
+        return this.http.get(this.url + 'ByWinner?winner=' + winner)
+            .map(function (response) { return response.json(); });
+    };
+    MatchListService.prototype.getMatchesByPerson = function (person) {
+        return this.http.get(this.url + 'ByPerson?person=' + person)
+            .map(function (response) { return response.json(); });
+    };
+    MatchListService.prototype.getMatchesByCharacter = function (character) {
+        return this.http.get(this.url + 'ByCharacter?character=' + character.replace('_', ' '))
+            .map(function (response) { return response.json(); });
+    };
     MatchListService.prototype.getMatchesByWinnerCharacter = function (winner) {
         return this.http.get(this.url + 'ByWinnerCharacter?winner_character=' + winner)
             .map(function (response) { return response.json(); });
@@ -30,6 +42,20 @@ var MatchListService = (function () {
         return this.http.get(this.url + 'ByLoserCharacter?loser_character=' + loser)
             .map(function (response) { return response.json(); });
     };
+    MatchListService.prototype.postMatch = function (m) {
+        var params = new http_1.URLSearchParams();
+        var url = 'http://localhost:5000/postMatch?';
+        url = url.concat('winner' + '=' + m['Winner'] + '&');
+        url = url.concat('winner_character' + '=' + m['Winner_Character'] + '&');
+        url = url.concat('winner_kos' + '=' + m['Winner_KOS'] + '&');
+        url = url.concat('winner_falls' + '=' + m['Winner_Falls'] + '&');
+        url = url.concat('loser' + '=' + m['Loser'] + '&');
+        url = url.concat('loser_character' + '=' + m['Loser_Character'] + '&');
+        url = url.concat('loser_kos' + '=' + m['Loser_KOS'] + '&');
+        url = url.concat('loser_falls' + '=' + m['Loser_Falls'] + '&');
+        url = url.concat('stage' + '=' + m['Stage']);
+        return this.http.post(url, {}).subscribe();
+    };
     return MatchListService;
 }());
 MatchListService = __decorate([
@@ -37,4 +63,29 @@ MatchListService = __decorate([
     __metadata("design:paramtypes", [http_1.Http])
 ], MatchListService);
 exports.MatchListService = MatchListService;
+//Item Model
+var Match = (function () {
+    function Match(t) {
+        this.t = t;
+        this.Winner = t.Winner;
+        this.Winner_Character = t.Winner_Character;
+        this.Winner_KOS = t.Winner_KOS;
+        this.Winner_Falls = t.Winner_Falls;
+        this.Loser = t.Loser;
+        this.Loser_Character = t.Loser_Character;
+        this.Loser_KOS = t.Loser_KOS;
+        this.Loser_Falls = t.Loser_Falls;
+        this.Stage = t.Stage;
+    }
+    return Match;
+}());
+exports.Match = Match;
+var Person = (function () {
+    function Person(t) {
+        this.t = t;
+        this.name = t.name;
+    }
+    return Person;
+}());
+exports.Person = Person;
 //# sourceMappingURL=matchlist.service.js.map
