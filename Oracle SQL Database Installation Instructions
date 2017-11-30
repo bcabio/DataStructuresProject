@@ -1,0 +1,10 @@
+Oracle SQL Database Installation Instructions
+Ray and Braxton
+
+Download SQL Command Line and Oracle SQL 64 bit client Version 11c. 
+This can also be done using a MySQL server in Google Cloud. You can 
+find the download links with a quick Google Search. Run the installer 
+for each of the separate programs. Then, you have to create a username 
+and password to be able to launch instances of the database and to connect 
+to a locally hosted server. You can also connect to another server if it has 
+any open ports. Then, you must log in and create a new connection. 
